@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌿 Happy Birthday Sudu Manika ❤️ ~ Totoro Theme</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Yusei+Magic&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --totoro-grey: #7a8b8c;
+            --totoro-belly: #f5f1e8;
+            --forest-green: #4a7c59;
+            --leaf-green: #8bc34a;
+            --sky-blue: #87ceeb;
+            --soft-cream: #faf8f0;
+            --warm-brown: #8b6914;
+            --ghibli-blue: #5ba4ca;
+            --soot-black: #2d2d2d;
+            --pink-accent: #f8a5b8;
+            --sunset-orange: #f7a072;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+            background: linear-gradient(180deg, 
+                #a8d8ea 0%, 
+                #c8e6c9 30%,
+                #dcedc8 50%,
+                #f1f8e9 70%,
+                #fff8e1 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            color: #4a5568;
+        }
+
+        /* ===== FLOATING LEAVES ===== */
+        .leaves-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .leaf {
+            position: absolute;
+            font-size: 1.5rem;
+            opacity: 0.7;
+            animation: leafFall linear infinite;
+        }
+
+        @keyframes leafFall {
+            0% {
+                transform: translateY(-10vh) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.7;
+            }
+            90% {
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(105vh) translateX(100px) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        /* ===== SOOT SPRITES (SUSUWATARI) ===== */
+        .soot-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .soot-sprite {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: radial-gradient(circle, #1a1a1a 60%, transparent 70%);
+            border-radius: 50%;
+            animation: sootWalk 8s ease-in-out infinite;
+        }
+
+        .soot-sprite::before,
+        .soot-sprite::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: white;
+            border-radius: 50%;
+            top: 8px;
+        }
+
+        .soot-sprite::before { left: 6px; }
+        .soot-sprite::after { right: 6px; }
+
+        .soot-sprite .legs {
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 2px;
+        }
+
+        .soot-sprite .leg {
+            width: 3px;
+            height: 10px;
+            background: #1a1a1a;
+            border-radius: 2px;
+            animation: legWiggle 0.3s ease-in-out infinite alternate;
+        }
+
+        @keyframes sootWalk {
+            0%, 100% { transform: translateX(0) translateY(0); }
+            25% { transform: translateX(30px) translateY(-5px); }
+            50% { transform: translateX(0) translateY(0); }
+            75% { transform: translateX(-30px) translateY(-5px); }
+        }
+
+        @keyframes legWiggle {
+            0% { height: 8px; }
+            100% { height: 12px; }
+        }
+
+        /* ===== MAIN CONTAINER ===== */
+        .main-container {
+            position: relative;
+            z-index: 10;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 30px 20px 100px;
+        }
+
+        /* ===== TOTORO CHARACTER ===== */
+        .totoro-scene {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            padding: 40px 0;
+            position: relative;
+        }
+
+        .totoro {
+            position: relative;
+            width: 200px;
+            height: 260px;
+            animation: totoroFloat 4s ease-in-out infinite;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .totoro:hover {
+            transform: scale(1.05);
+        }
+
+        .totoro:active {
+            transform: scale(0.95);
+        }
+
+        @keyframes totoroFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* Totoro Body */
+        .totoro-body {
+            position: absolute;
+            width: 180px;
+            height: 220px;
+            background: linear-gradient(135deg, #8a9a9b 0%, var(--totoro-grey) 50%, #6a7a7b 100%);
+            border-radius: 90px 90px 80px 80px;
+            bottom: 0;
+            left: 10px;
+            box-shadow: 
+                inset -15px -15px 30px rgba(0,0,0,0.1),
+                inset 15px 15px 30px rgba(255,255,255,0.1),
+                0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        /* Totoro Belly */
+        .totoro-belly {
+            position: absolute;
+            width: 130px;
+            height: 120px;
+            background: radial-gradient(ellipse, #fff 0%, var(--totoro-belly) 70%);
+            border-radius: 50%;
+            bottom: 25px;
+            left: 25px;
+            box-shadow: inset 0 -5px 15px rgba(0,0,0,0.05);
+        }
+
+        /* Belly Markings */
+        .belly-mark {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 15px solid rgba(122, 139, 140, 0.5);
+        }
+
+        .belly-mark:nth-child(1) { top: 20px; left: 25px; }
+        .belly-mark:nth-child(2) { top: 20px; left: 55px; }
+        .belly-mark:nth-child(3) { top: 20px; left: 85px; }
+        .belly-mark:nth-child(4) { top: 50px; left: 40px; }
+        .belly-mark:nth-child(5) { top: 50px; left: 70px; }
+
+        /* Totoro Ears */
+        .totoro-ear {
+            position: absolute;
+            width: 40px;
+            height: 70px;
+            background: linear-gradient(135deg, #8a9a9b, var(--totoro-grey));
+            border-radius: 50% 50% 0 0;
+            top: -40px;
+            box-shadow: inset -3px 0 10px rgba(0,0,0,0.1);
+            animation: earWiggle 3s ease-in-out infinite;
+        }
+
+        .totoro-ear.left {
+            left: 25px;
+            transform: rotate(-15deg);
+            animation-delay: 0s;
+        }
+
+        .totoro-ear.right {
+            right: 25px;
+            transform: rotate(15deg);
+            animation-delay: 0.3s;
+        }
+
+        @keyframes earWiggle {
+            0%, 100% { transform: rotate(var(--rot, 0deg)); }
+            50% { transform: rotate(calc(var(--rot, 0deg) * 1.3)); }
+        }
+
+        .totoro-ear.left { --rot: -15deg; }
+        .totoro-ear.right { --rot: 15deg; }
+
+        /* Totoro Eyes */
+        .totoro-eyes {
+            position: absolute;
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 30px;
+        }
+
+        .totoro-eye {
+            width: 28px;
+            height: 28px;
+            background: radial-gradient(circle at 30% 30%, #fff 0%, #f0f0f0 100%);
+            border-radius: 50%;
+            position: relative;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            animation: blink 4s ease-in-out infinite;
+        }
+
+        .totoro-eye::after {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: radial-gradient(circle at 30% 30%, #333 0%, #000 100%);
+            border-radius: 50%;
+            top: 8px;
+            left: 8px;
+            animation: lookAround 6s ease-in-out infinite;
+        }
+
+        @keyframes blink {
+            0%, 45%, 55%, 100% { transform: scaleY(1); }
+            50% { transform: scaleY(0.1); }
+        }
+
+        @keyframes lookAround {
+            0%, 100% { transform: translate(0, 0); }
+            25% { transform: translate(-3px, -2px); }
+            50% { transform: translate(3px, 0); }
+            75% { transform: translate(-2px, 2px); }
+        }
+
+        /* Totoro Nose */
+        .totoro-nose {
+            position: absolute;
+            width: 22px;
+            height: 12px;
+            background: linear-gradient(135deg, #444 0%, #222 100%);
+            border-radius: 50%;
+            top: 85px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+
+        /* Totoro Whiskers */
+        .totoro-whiskers {
+            position: absolute;
+            top: 95px;
+            width: 100%;
+        }
+
+        .whisker {
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #555, transparent);
+        }
+
+        .whisker.left-1 { left: 10px; top: 0; transform: rotate(10deg); }
+        .whisker.left-2 { left: 10px; top: 12px; transform: rotate(0deg); }
+        .whisker.left-3 { left: 10px; top: 24px; transform: rotate(-10deg); }
+        .whisker.right-1 { right: 10px; top: 0; transform: rotate(-10deg); }
+        .whisker.right-2 { right: 10px; top: 12px; transform: rotate(0deg); }
+        .whisker.right-3 { right: 10px; top: 24px; transform: rotate(10deg); }
+
+        /* Leaf Umbrella */
+        .leaf-umbrella {
+            position: absolute;
+            width: 120px;
+            height: 100px;
+            top: -80px;
+            right: -40px;
+            animation: umbrellaFloat 4s ease-in-out infinite;
+        }
+
+        .umbrella-leaf {
+            width: 100px;
+            height: 80px;
+            background: linear-gradient(135deg, #9ccc65 0%, var(--leaf-green) 50%, #7cb342 100%);
+            border-radius: 0 70% 70% 70%;
+            transform: rotate(-30deg);
+            position: relative;
+            box-shadow: 
+                inset -10px -10px 20px rgba(0,0,0,0.1),
+                5px 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .umbrella-leaf::before {
+            content: '';
+            position: absolute;
+            width: 3px;
+            height: 60px;
+            background: linear-gradient(180deg, #5d4037, #3e2723);
+            bottom: -50px;
+            left: 20px;
+            transform: rotate(10deg);
+            border-radius: 2px;
+        }
+
+        /* Leaf vein */
+        .umbrella-leaf::after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 2px;
+            background: rgba(255,255,255,0.3);
+            top: 35%;
+            left: 20%;
+            transform: rotate(-20deg);
+        }
+
+        @keyframes umbrellaFloat {
+            0%, 100% { transform: rotate(0deg) translateY(0); }
+            50% { transform: rotate(5deg) translateY(-5px); }
+        }
+
+        /* Small Totoros */
+        .small-totoro {
+            position: absolute;
+            width: 50px;
+            height: 60px;
+            animation: smallTotoroHop 2s ease-in-out infinite;
+        }
+
+        .small-totoro.white {
+            left: -60px;
+            bottom: 10px;
+            animation-delay: 0.3s;
+        }
+
+        .small-totoro.blue {
+            left: -30px;
+            bottom: 5px;
+            animation-delay: 0s;
+        }
+
+        @keyframes smallTotoroHop {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .small-totoro-body {
+            width: 40px;
+            height: 50px;
+            border-radius: 50% 50% 45% 45%;
+            position: relative;
+        }
+
+        .small-totoro.white .small-totoro-body {
+            background: linear-gradient(135deg, #fff 0%, #f5f5f5 100%);
+        }
+
+        .small-totoro.blue .small-totoro-body {
+            background: linear-gradient(135deg, #7ec8e3 0%, #5ba4ca 100%);
+        }
+
+        .small-totoro-ear {
+            position: absolute;
+            width: 12px;
+            height: 20px;
+            border-radius: 50% 50% 0 0;
+            top: -12px;
+        }
+
+        .small-totoro.white .small-totoro-ear {
+            background: #fff;
+        }
+
+        .small-totoro.blue .small-totoro-ear {
+            background: #5ba4ca;
+        }
+
+        .small-totoro-ear.left { left: 5px; transform: rotate(-10deg); }
+        .small-totoro-ear.right { right: 5px; transform: rotate(10deg); }
+
+        .small-totoro-eyes {
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+        }
+
+        .small-totoro-eye {
+            width: 8px;
+            height: 8px;
+            background: #222;
+            border-radius: 50%;
+        }
+
+        /* ===== TITLE ===== */
+        .title {
+            font-family: 'Yusei Magic', sans-serif;
+            font-size: clamp(2rem, 7vw, 3.5rem);
+            text-align: center;
+            color: var(--forest-green);
+            margin: 20px 0;
+            text-shadow: 
+                2px 2px 0 #fff,
+                -1px -1px 0 #fff,
+                1px -1px 0 #fff,
+                -1px 1px 0 #fff;
+            animation: titlePop 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) both;
+        }
+
+        @keyframes titlePop {
+            0% { transform: scale(0); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .title .heart {
+            color: var(--pink-accent);
+            display: inline-block;
+            animation: heartBeat 1.5s ease-in-out infinite;
+        }
+
+        @keyframes heartBeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.2); }
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #6b8e6b;
+            margin-bottom: 80px;
+            animation: fadeIn 1s ease-out 0.5s both;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ===== COUNTDOWN ===== */
+        .countdown-section {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 
+                0 10px 40px rgba(74, 124, 89, 0.15),
+                inset 0 1px 0 rgba(255,255,255,0.8);
+            border: 2px solid rgba(139, 195, 74, 0.3);
+            animation: fadeIn 1s ease-out 0.7s both;
+        }
+
+        .countdown-title {
+            font-family: 'Yusei Magic', sans-serif;
+            text-align: center;
+            color: var(--forest-green);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .countdown-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+
+        .countdown-item {
+            background: linear-gradient(135deg, var(--leaf-green) 0%, var(--forest-green) 100%);
+            border-radius: 20px;
+            padding: 20px 10px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 8px 25px rgba(74, 124, 89, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .countdown-item:hover {
+            transform: translateY(-5px) scale(1.05);
+        }
+
+        .countdown-value {
+            font-size: 2.2rem;
+            font-weight: 800;
+            display: block;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .countdown-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+
+        /* Birthday Message */
+        .birthday-celebration {
+            display: none;
+            text-align: center;
+            padding: 30px;
+            animation: celebratePop 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        @keyframes celebratePop {
+            0% { transform: scale(0) rotate(-10deg); }
+            100% { transform: scale(1) rotate(0deg); }
+        }
+
+        .birthday-celebration h2 {
+            font-family: 'Yusei Magic', sans-serif;
+            font-size: 2.5rem;
+            color: var(--forest-green);
+            margin-bottom: 15px;
+        }
+
+        .birthday-celebration .emojis {
+            font-size: 2.5rem;
+            animation: bounce 1s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* ===== MESSAGE CARD ===== */
+        .card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            padding: 35px;
+            margin: 25px 0;
+            box-shadow: 0 10px 40px rgba(74, 124, 89, 0.12);
+            border: 2px solid rgba(139, 195, 74, 0.2);
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 1s ease-out 0.9s both;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(74, 124, 89, 0.2);
+        }
+
+        .card::before {
+            content: '🍃';
+            position: absolute;
+            font-size: 3rem;
+            opacity: 0.1;
+            top: -10px;
+            right: -10px;
+        }
+
+        .card-title {
+            font-family: 'Yusei Magic', sans-serif;
+            font-size: 1.4rem;
+            color: var(--forest-green);
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card-content {
+            color: #5a6a5a;
+            line-height: 1.9;
+            font-size: 1.05rem;
+        }
+
+        .card-content strong {
+            color: var(--pink-accent);
+        }
+
+        /* ===== GIFT BOX ===== */
+        .gift-section {
+            animation: fadeIn 1s ease-out 1.1s both;
+        }
+
+        .gift-box {
+            background: linear-gradient(135deg, 
+                rgba(248, 165, 184, 0.2), 
+                rgba(139, 195, 74, 0.2));
+            border: 3px dashed var(--pink-accent);
+            border-radius: 30px;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .gift-box::before {
+            content: '✨';
+            position: absolute;
+            font-size: 2rem;
+            top: 10px;
+            right: 20px;
+            animation: sparkle 2s ease-in-out infinite;
+        }
+
+        .gift-box::after {
+            content: '🌸';
+            position: absolute;
+            font-size: 2rem;
+            bottom: 10px;
+            left: 20px;
+            animation: sparkle 2s ease-in-out infinite 0.5s;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 0.4; transform: scale(1) rotate(0deg); }
+            50% { opacity: 1; transform: scale(1.2) rotate(15deg); }
+        }
+
+        .gift-icon {
+            font-size: 4rem;
+            animation: giftWiggle 2s ease-in-out infinite;
+        }
+
+        @keyframes giftWiggle {
+            0%, 100% { transform: rotate(-5deg); }
+            50% { transform: rotate(5deg); }
+        }
+
+        .gift-title {
+            font-family: 'Yusei Magic', sans-serif;
+            font-size: 1.5rem;
+            color: var(--forest-green);
+            margin: 15px 0;
+        }
+
+        .gift-text {
+            color: #6b8e6b;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .gift-emojis {
+            font-size: 2rem;
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .gift-emojis span {
+            animation: hop 1s ease-in-out infinite;
+        }
+
+        .gift-emojis span:nth-child(1) { animation-delay: 0s; }
+        .gift-emojis span:nth-child(2) { animation-delay: 0.1s; }
+        .gift-emojis span:nth-child(3) { animation-delay: 0.2s; }
+
+        @keyframes hop {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* ===== ACORNS DECORATION ===== */
+        .acorn-deco {
+            text-align: center;
+            font-size: 1.5rem;
+            margin: 30px 0;
+            opacity: 0.6;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            text-align: center;
+            padding: 30px 0;
+            color: #8a9e8a;
+            font-size: 0.9rem;
+            animation: fadeIn 1s ease-out 1.3s both;
+        }
+
+        .footer .love {
+            color: var(--pink-accent);
+        }
+
+        /* ===== GRASS ===== */
+        .grass {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background: linear-gradient(180deg, transparent 0%, #7cb342 40%, #558b2f 100%);
+            z-index: 5;
+        }
+
+        .grass::before {
+            content: '';
+            position: absolute;
+            bottom: 40px;
+            left: 0;
+            width: 100%;
+            height: 30px;
+            background: 
+                repeating-linear-gradient(90deg,
+                    transparent 0px,
+                    transparent 10px,
+                    #8bc34a 10px,
+                    #8bc34a 12px,
+                    transparent 12px,
+                    transparent 20px
+                );
+            clip-path: polygon(
+                0% 100%, 5% 60%, 10% 100%, 15% 50%, 20% 100%, 25% 70%, 
+                30% 100%, 35% 55%, 40% 100%, 45% 65%, 50% 100%, 55% 45%,
+                60% 100%, 65% 60%, 70% 100%, 75% 50%, 80% 100%, 85% 70%,
+                90% 100%, 95% 55%, 100% 100%
+            );
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 600px) {
+            .main-container {
+                padding: 20px 15px 120px;
+            }
+
+            .totoro {
+                transform: scale(0.8);
+            }
+
+            .small-totoro { display: none; }
+
+            .countdown-grid {
+                gap: 8px;
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .countdown-item {
+                padding: 15px 8px;
+                border-radius: 15px;
+            }
+
+            .countdown-value {
+                font-size: 1.6rem;
+            }
+
+            .card {
+                padding: 25px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .countdown-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== DUST PARTICLES ===== */
+        .dust {
+            position: fixed;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: dustFloat 10s linear infinite;
+        }
+
+        @keyframes dustFloat {
+            0% {
+                transform: translateY(100vh) translateX(0);
+                opacity: 0;
+            }
+            10% { opacity: 0.6; }
+            90% { opacity: 0.6; }
+            100% {
+                transform: translateY(-10vh) translateX(50px);
+                opacity: 0;
+            }
+        }
+
+        /* Confetti */
+        .confetti {
+            position: fixed;
+            top: -20px;
+            z-index: 1000;
+            pointer-events: none;
+            animation: confettiFall linear forwards;
+        }
+
+        @keyframes confettiFall {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Leaves -->
+    <div class="leaves-container" id="leaves"></div>
+
+    <!-- Dust Particles -->
+    <div id="dust"></div>
+
+    <!-- Soot Sprites -->
+    <div class="soot-container" id="soots"></div>
+
+    <!-- Grass -->
+    <div class="grass"></div>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <!-- Countdown -->
+        <!-- <section class="countdown-section">
+            <h2 class="countdown-title">🌿 Countdown to Your Special Day 🌿</h2>
+            
+            <div class="countdown-grid" id="countdown">
+                <div class="countdown-item">
+                    <span class="countdown-value" id="days">00</span>
+                    <span class="countdown-label">Days</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-value" id="hours">00</span>
+                    <span class="countdown-label">Hours</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-value" id="minutes">00</span>
+                    <span class="countdown-label">Minutes</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-value" id="seconds">00</span>
+                    <span class="countdown-label">Seconds</span>
+                </div>
+            </div>
+
+            <div class="birthday-celebration" id="birthdayMsg">
+                <div class="emojis">🎉🎊🎂🌸🎁</div>
+                <h2>It's Your Birthday!</h2>
+                <p style="color: #6b8e6b; font-size: 1.1rem; margin-top: 10px;">
+                    The forest spirits are celebrating with you! ✨
+                </p>
+            </div>
+        </section> -->
+
+        <!-- Title -->
+        <h1 class="title">
+            Happy Birthday<br>Sudu Manika <span class="heart">❤️</span>
+        </h1>
+        <p class="subtitle">✨ Happy Birthday to the girl who stole my heart! ✨</p>
+
+        <!-- Totoro Scene -->
+        <div class="totoro-scene">
+            <!-- Small Totoros -->
+            <div class="small-totoro blue">
+                <div class="small-totoro-body">
+                    <div class="small-totoro-ear left"></div>
+                    <div class="small-totoro-ear right"></div>
+                    <div class="small-totoro-eyes">
+                        <div class="small-totoro-eye"></div>
+                        <div class="small-totoro-eye"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="small-totoro white">
+                <div class="small-totoro-body">
+                    <div class="small-totoro-ear left"></div>
+                    <div class="small-totoro-ear right"></div>
+                    <div class="small-totoro-eyes">
+                        <div class="small-totoro-eye"></div>
+                        <div class="small-totoro-eye"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Totoro -->
+            <div class="totoro" id="totoro">
+                <div class="leaf-umbrella">
+                    <div class="umbrella-leaf"></div>
+                </div>
+                <div class="totoro-ear left"></div>
+                <div class="totoro-ear right"></div>
+                <div class="totoro-body">
+                    <div class="totoro-eyes">
+                        <div class="totoro-eye"></div>
+                        <div class="totoro-eye"></div>
+                    </div>
+                    <div class="totoro-nose"></div>
+                    <div class="totoro-whiskers">
+                        <div class="whisker left-1"></div>
+                        <div class="whisker left-2"></div>
+                        <div class="whisker left-3"></div>
+                        <div class="whisker right-1"></div>
+                        <div class="whisker right-2"></div>
+                        <div class="whisker right-3"></div>
+                    </div>
+                    <div class="totoro-belly">
+                        <div class="belly-mark"></div>
+                        <div class="belly-mark"></div>
+                        <div class="belly-mark"></div>
+                        <div class="belly-mark"></div>
+                        <div class="belly-mark"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Countdown -->
+        
+
+        <!-- Message Card -->
+        <div class="card">
+            <h3 class="card-title">💌 To My Susi Sudu Manika</h3>
+            <p class="card-content">
+                Every day with you feels special, but today is extra special because it’s the day the most amazing girl was born. You make my heart race, my days happier, and my life better just by being you. I hope your birthday is filled with smiles, surprises, hugs, kisses, and all the love you can handle. Don’t worry—I’ll be right here with you 💖🎉
+                <br><br>
+                Thank you for being my adventure partner in this wonderful journey called life. You make every moment feel magical, beautiful, and full of wonder!
+                <br><br>
+                <strong>I love you....!💕</strong>
+            </p>
+        </div>
+
+        <!-- Acorn Decoration -->
+        <div class="acorn-deco">🌰 🍃 🌰 🍃 🌰</div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Made with <span class="love">♥</span> thaidya</p>
+            
+        </footer>
+    </div>
+
+    <script>
+        // ===== CREATE FLOATING LEAVES =====
+        (function createLeaves() {
+            const container = document.getElementById('leaves');
+            const leafEmojis = ['🍃', '🌿', '🍂', '🌱', '☘️'];
+            
+            function spawnLeaf() {
+                const leaf = document.createElement('div');
+                leaf.className = 'leaf';
+                leaf.textContent = leafEmojis[Math.floor(Math.random() * leafEmojis.length)];
+                leaf.style.left = Math.random() * 100 + '%';
+                leaf.style.animationDuration = (8 + Math.random() * 8) + 's';
+                leaf.style.animationDelay = Math.random() * 2 + 's';
+                leaf.style.fontSize = (1 + Math.random() * 1) + 'rem';
+                container.appendChild(leaf);
+                
+                setTimeout(() => leaf.remove(), 18000);
+            }
+            
+            // Initial leaves
+            for (let i = 0; i < 10; i++) {
+                setTimeout(spawnLeaf, i * 300);
+            }
+            
+            setInterval(spawnLeaf, 1500);
+        })();
+
+        // ===== CREATE DUST PARTICLES =====
+        (function createDust() {
+            const container = document.getElementById('dust');
+            
+            for (let i = 0; i < 20; i++) {
+                const dust = document.createElement('div');
+                dust.className = 'dust';
+                dust.style.left = Math.random() * 100 + '%';
+                dust.style.animationDelay = Math.random() * 10 + 's';
+                dust.style.animationDuration = (8 + Math.random() * 6) + 's';
+                container.appendChild(dust);
+            }
+        })();
+
+        // ===== CREATE SOOT SPRITES =====
+        (function createSoots() {
+            const container = document.getElementById('soots');
+            
+            for (let i = 0; i < 5; i++) {
+                const soot = document.createElement('div');
+                soot.className = 'soot-sprite';
+                soot.style.left = (10 + i * 20) + '%';
+                soot.style.bottom = (20 + Math.random() * 30) + 'px';
+                soot.style.animationDelay = (i * 0.5) + 's';
+                soot.style.transform = `scale(${0.6 + Math.random() * 0.5})`;
+                
+                const legs = document.createElement('div');
+                legs.className = 'legs';
+                for (let j = 0; j < 6; j++) {
+                    const leg = document.createElement('div');
+                    leg.className = 'leg';
+                    leg.style.animationDelay = (j * 0.05) + 's';
+                    legs.appendChild(leg);
+                }
+                soot.appendChild(legs);
+                container.appendChild(soot);
+            }
+        })();
+
+        // ===== TOTORO CLICK EFFECT =====
+        document.getElementById('totoro').addEventListener('click', () => {
+            const emojis = ['🌰', '🍃', '✨', '💚', '🌸', '🌿'];
+            
+            for (let i = 0; i < 8; i++) {
+                const emoji = document.createElement('div');
+                emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                emoji.style.cssText = `
+                    position: fixed;
+                    left: 50%;
+                    top: 40%;
+                    font-size: 2rem;
+                    pointer-events: none;
+                    z-index: 9999;
+                    animation: burst 1s ease-out forwards;
+                    --angle: ${(i / 8) * 360}deg;
+                    --distance: ${60 + Math.random() * 40}px;
+                `;
+                document.body.appendChild(emoji);
+                setTimeout(() => emoji.remove(), 1000);
+            }
+        });
+
+        // Add burst animation
+        const burstStyle = document.createElement('style');
+        burstStyle.textContent = `
+            @keyframes burst {
+                0% {
+                    opacity: 1;
+                    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+                }
+                100% {
+                    opacity: 0;
+                    transform: translate(
+                        calc(-50% + cos(var(--angle)) * var(--distance)),
+                        calc(-50% + sin(var(--angle)) * var(--distance))
+                    ) rotate(360deg) scale(0);
+                }
+            }
+        `;
+        document.head.appendChild(burstStyle);
+
+        // ===== COUNTDOWN TIMER =====
+        (function initCountdown() {
+            // Birthday: January 2, 2026 at midnight
+            const birthday = new Date('2026-01-02T00:00:00').getTime();
+            
+            const daysEl = document.getElementById('days');
+            const hoursEl = document.getElementById('hours');
+            const minutesEl = document.getElementById('minutes');
+            const secondsEl = document.getElementById('seconds');
+            const countdownEl = document.getElementById('countdown');
+            const birthdayMsgEl = document.getElementById('birthdayMsg');
+            
+            let confettiTriggered = false;
+
+            function updateCountdown() {
+                const now = Date.now();
+                const distance = birthday - now;
+
+                if (distance <= 0) {
+                    countdownEl.style.display = 'none';
+                    birthdayMsgEl.style.display = 'block';
+                    
+                    if (!confettiTriggered) {
+                        confettiTriggered = true;
+                        triggerConfetti();
+                    }
+                    return;
+                }
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                daysEl.textContent = String(days).padStart(2, '0');
+                hoursEl.textContent = String(hours).padStart(2, '0');
+                minutesEl.textContent = String(minutes).padStart(2, '0');
+                secondsEl.textContent = String(seconds).padStart(2, '0');
+            }
+
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        })();
+
+        // ===== CONFETTI =====
+        function triggerConfetti() {
+            const colors = ['#8bc34a', '#f8a5b8', '#87ceeb', '#fff', '#f7a072', '#7ec8e3'];
+            const emojis = ['🌸', '🍃', '✨', '🌰', '💚', '🎂'];
+            
+            for (let i = 0; i < 60; i++) {
+                setTimeout(() => {
+                    const isEmoji = Math.random() > 0.6;
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    
+                    if (isEmoji) {
+                        confetti.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                        confetti.style.fontSize = (1 + Math.random()) + 'rem';
+                    } else {
+                        confetti.style.width = (8 + Math.random() * 8) + 'px';
+                        confetti.style.height = (8 + Math.random() * 8) + 'px';
+                        confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+                        confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+                    }
+                    
+                    confetti.style.left = Math.random() * 100 + '%';
+                    confetti.style.animationDuration = (2 + Math.random() * 3) + 's';
+                    document.body.appendChild(confetti);
+                    
+                    setTimeout(() => confetti.remove(), 5000);
+                }, i * 60);
+            }
+            
+            // Wave againgift
+            
+            setTimeout(triggerConfetti, 5000);
+        }
+
+        console.log('🌿 Totoro says: Happy Birthday! となりのトトロ 🌿');
+    </script>
+</body>
+</html>
